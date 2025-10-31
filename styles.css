@@ -1,0 +1,189 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --accent: #64ffda;
+  --text: #e9f1ff;
+  --radius: 12px;
+  --max-width: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #071023 80%);
+  color: var(--text);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap { max-width: var(--max-width); width: 100%; }
+
+header.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.brand { font-weight: 700; }
+.sub { color: var(--muted); font-size: 0.9rem; }
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 12px;
+}
+nav a:hover { color: var(--accent); }
+
+.hero {
+  display: flex;
+  gap: 24px;
+  background: rgba(255,255,255,0.03);
+  padding: 24px;
+  border-radius: var(--radius);
+}
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--accent), #39e0c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.hero p { margin: 0; color: var(--muted); }
+.hero-img { text-align: center; }
+.photo {
+  width: 140px; height: 140px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #08202b, #0f1a2a);
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.small { font-size: 0.9rem; }
+.muted { color: var(--muted); }
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.btn, .cert-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn.primary, .cert-btn {
+  background: linear-gradient(90deg, var(--accent), #39e0c9);
+  color: #041b15;
+  border: none;
+}
+.cta { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+section {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.columns { display: grid; grid-template-columns: 1fr 320px; gap: 16px; }
+@media (max-width: 880px) {
+  .columns { grid-template-columns: 1fr; }
+  .hero { flex-direction: column; align-items: center; text-align: center; }
+  .hero-img { margin-top: 16px; }
+}
+
+.card {
+  background: rgba(15, 23, 36, 0.85);
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.hr { height: 1px; background: rgba(255,255,255,0.05); margin: 8px 0; }
+.tools { font-size: 0.9rem; color: var(--muted); }
+
+.skill-chip {
+  display: inline-block;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin: 4px 4px 0 0;
+  font-size: 0.85rem;
+}
+
+/* Certification button hover */
+.cert-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.4);
+}
+
+/* Contact section adjustments */
+#contact .columns { grid-template-columns: 1fr; gap: 16px; }
+#contact .card {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.02);
+}
+#contact .contact-list a {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+#contact .contact-list a:hover { color: var(--accent); }
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* TryHackMe Live Stats Card */
+#thm-stats {
+  margin-top: 20px;
+}
+#thm-stats .thm-iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#thm-stats .thm-iframe iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transform: scale(3);
+  transform-origin: top left;
+}

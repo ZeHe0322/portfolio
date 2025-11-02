@@ -166,24 +166,38 @@ footer {
   color: var(--muted);
 }
 
-/* TryHackMe Live Stats Card */
+/* TryHackMe Stats Card */
 #thm-stats {
   margin-top: 20px;
 }
-#thm-stats .thm-iframe {
+
+#thm-stats .thm-badge {
   width: 100%;
-  height: 250px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.02);
-  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#thm-stats .thm-iframe iframe {
+
+#thm-stats .thm-badge img {
   width: 100%;
-  height: 100%;
-  border: none;
-  transform: scale(3);
-  transform-origin: top left;
+  height: auto;
+  border-radius: 10px;
+}
+
+#thm-stats .thm-link {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: #1a73e8;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+#thm-stats .thm-link:hover {
+  background-color: #155ab6;
 }
